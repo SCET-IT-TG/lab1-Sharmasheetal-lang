@@ -22,7 +22,7 @@ db.students.insertOne({
   name: "Ravi",
   department: "Electronics",
   semester: 6,
-  mobile: "9876543210"
+  mobile: 9876543210
 })
 
 
@@ -85,4 +85,5 @@ db.subjects.insert({
   course_name: "MCA",
   subject_list: ["AI", "ML", "Cloud Computing"]
 })
+
 
