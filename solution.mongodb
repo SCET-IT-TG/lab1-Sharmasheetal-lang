@@ -1,92 +1,108 @@
-//exercise : 1
+// Select database (Allowed way)
+db = db.getSiblingDB("examDB");
 
-
-db = db.getSiblingDB("examDB")
-db.students.insertOne({
-  name: "Amit",
-  department: "Computer Science",
-  semester: 5,
-  mobile: "9876543210"
-});
+// ----------------------------
+// Exercise 1: Database & Collection Creation
+// ----------------------------
 
 db.students.insertOne({
-  name: "Neha",
-  department: "Information Technology",
+  name: "sonakshi sharma",
+  department: "ECE",
   semester: 3,
-  mobile: "9876543219"
+  mobile: 8111111111
 });
-
-
-//exercise : 2
-
 
 db.students.insertOne({
-  name: "Ravi",
-  department: "Electronics",
-  semester: 6,
-  mobile: "9876543215"
+  name: "shilka rajput",
+  department: "Civil",
+  semester: 7,
+  mobile: 8222222222
 });
 
+// ----------------------------
+// Exercise 2: Insert Document with Multiple Fields
+// ----------------------------
 
-//exercise : 3
+db.students.insertOne({
+  name: "sonakshi rajput",
+  department: "Mechanical",
+  semester: 5,
+  mobile: 8333333333
+});
 
+// ----------------------------
+// Exercise 3: Array of Simple Values
+// ----------------------------
 
 db.subjects.insertOne({
-  course_name: "BSc Computer Science",
-  subject_list: ["DBMS", "Operating System", "Computer Networks", "Java"]
+  course_name: "B.Tech ECE",
+  subject_list: ["Signals", "VLSI", "Networks", "Microcontrollers"]
 });
 
-
-//exercise : 4
-
+// ----------------------------
+// Exercise 4: Array of Objects
+// ----------------------------
 
 db.faculty.insertOne({
-  department: "Computer Science",
+  department: "Electronics Engineering",
   teachers: [
-    { name: "Dr. Sharma", experience: 12 },
-    { name: "Ms. Patel", experience: 7 }
+    { name: "Dr. Ramesh Pillai", experience: 18 },
+    { name: "Prof. Sunita Menon", experience: 11 }
   ]
 });
 
-
-//exercise : 5
-
+// ----------------------------
+// Exercise 5: Explicit Primary Key using ObjectId()
+// ----------------------------
 
 db.students.insertOne({
   _id: ObjectId(),
-  name: "Kiran",
-  department: "Mechanical",
-  semester: 4
+  name: "akshita",
+  department: "ECE",
+  semester: 4,
+  mobile: 8444444444
 });
 
+// ----------------------------
+// Exercise 6: Duplicate Primary Key Observation
+// ----------------------------
 
-//exercise : 6
-
-
+// First insert (will succeed)
 db.students.insertOne({
-  _id: 101,
-  name: "Suresh",
-  department: "Civil"
+  _id: ObjectId("65def123456789abcdef0002"),
+  name: "Ravi Choudhary",
+  department: "Automobile",
+  semester: 2,
+  mobile: 8555555555
 });
 
+// Second insert with same _id (will FAIL — expected)
+db.students.insertOne({
+  _id: ObjectId("65def123456789abcdef0002"),
+  name: "Pallavi Deshpande",
+  department: "Automobile",
+  semester: 2,
+  mobile: 8666666666
+});
 
-//exercise : 7
+// ----------------------------
+// Exercise 7: Multiple Inserts using insert()
+// ----------------------------
 
+db.subjects.insert({
+  course_name: "BBA",
+  subject_list: ["Management", "Finance", "Marketing"]
+});
 
 db.subjects.insert({
   course_name: "MBA",
-  subject_list: ["Finance", "Marketing"]
+  subject_list: ["Strategy", "Operations", "HR"]
 });
 
 db.subjects.insert({
-  course_name: "BCA",
-  subject_list: ["C", "C++", "Python"]
-});
+  course_name: "B.Com",
+  subject_list: ["Accounting", "Economics", "Taxation"]
 
-db.subjects.insert({
-  course_name: "MCA",
-  subject_list: ["AI", "ML", "Cloud Computing"]
-});
 
 
 
