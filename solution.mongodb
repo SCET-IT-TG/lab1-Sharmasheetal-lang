@@ -6,14 +6,14 @@ db = db.getSiblingDB("examDB");
 // ----------------------------
 
 db.students.insertOne({
-  name: "sonakshi sharma",
+  name: "Siddharth Kulkarni",
   department: "ECE",
   semester: 3,
   mobile: 8111111111
 });
 
 db.students.insertOne({
-  name: "shilka rajput",
+  name: "Nisha Bansal",
   department: "Civil",
   semester: 7,
   mobile: 8222222222
@@ -24,7 +24,7 @@ db.students.insertOne({
 // ----------------------------
 
 db.students.insertOne({
-  name: "sonakshi rajput",
+  name: "Aditya Nair",
   department: "Mechanical",
   semester: 5,
   mobile: 8333333333
@@ -57,7 +57,7 @@ db.faculty.insertOne({
 
 db.students.insertOne({
   _id: ObjectId(),
-  name: "akshita",
+  name: "Kritika Arora",
   department: "ECE",
   semester: 4,
   mobile: 8444444444
@@ -102,12 +102,4 @@ db.subjects.insert({
 db.subjects.insert({
   course_name: "B.Com",
   subject_list: ["Accounting", "Economics", "Taxation"]
-
-
-
-
-
-
-
-
-
+});
